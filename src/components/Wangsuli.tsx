@@ -35,7 +35,7 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
           onChange={update}
           type="text"
           name="wangsuli"
-          placeholder="mau balesin?"
+          placeholder="Mau Dibalas?"
           disabled={status === 2}
         />
 
@@ -47,8 +47,7 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
       {status === 3 && (
         <div className="pangetan sukses wangsulan">
           <p>
-            Balesannya udah dikirim, tapi tetep harus nunggu aku ngecek dulu..
-            capek ya? semangat!
+            Balesannya udah dikirim, tapi tetep harus nunggu aku ngecek dulu ya ✨
           </p>
         </div>
       )}
