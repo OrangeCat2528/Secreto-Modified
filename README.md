@@ -53,4 +53,4 @@ Originally this project belonged to:<br>
 [Reynadi531/secret-message](https://github.com/Reynadi531/secret-message)<br>
 With an MIT License.
 
-Rebuilt with [MIT License](./LICENSE) anyway by [Suluh S](https://github.com/sooluh).
+Rebuilt with [MIT License](./LICENSE) anyway by [Suluh S](https://github.com/sooluh) & Modified by [OrangeCat](https://github.com/OrangeCat2528/).
