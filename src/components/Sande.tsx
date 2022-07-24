@@ -21,11 +21,11 @@ const Sande: FC = () => (
         <path d="M12 6l-2 4l4 3l-2 4v3"></path>
       </svg>
 
-      <h2>Mau ke NASA kak?</h2>
+      <h2>Error ya Kak?</h2>
 
       <p>
-        Cek dulu atuh koneksi internetnya, bisi ada kendala kan? atau kuotanya
-        abis kak? mau aku isiin? 🤨
+        Cek dulu Koneksi Internet kamu ya!
+        Udah Bisa? Reload Website nya ya ✨
       </p>
     </div>
   </Offline>
