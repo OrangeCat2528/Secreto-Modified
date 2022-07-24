@@ -3,9 +3,6 @@
 Secreto-like anonymous messaging app.<br>
 This project was bootstrapped with [Vite (React)](https://vitejs.dev/) and powered by [Supabase](https://supabase.io/).
 
-> **Warning**<br>
-> This project is not completely finished, nor is the documentation complete at all.
-
 ## Supabase Setup
 Query to create table `messages`:
 
@@ -51,6 +48,7 @@ yarn build
 
 Originally this project belonged to:<br>
 [Reynadi531/secret-message](https://github.com/Reynadi531/secret-message)<br>
+Fork [Sooluh/secret](https://github.com/sooluh/secret)<br>
 With an MIT License.
 
 Rebuilt with [MIT License](./LICENSE) anyway by [Suluh S](https://github.com/sooluh) & Modified by [OrangeCat](https://github.com/OrangeCat2528/).
