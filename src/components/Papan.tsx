@@ -11,7 +11,7 @@ const Papan: FC = () => {
 
   const description = birthday
     ? 'Hai Kamu! Hari ini farrel Sedang loh! Mau Ngucapin?'
-    : 'Ketikin apapun yang kamu pengen sampein ke aku.. Tapi ingat, jangan Yang Aneh" ya 🥰'
+    : 'Ketik Apapun Yang Ingin Kamu Sampaikan, Tapi Jangan yang Aneh" ya ✨'
 
   return (
     <div className="papan">
