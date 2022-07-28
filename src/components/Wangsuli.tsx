@@ -40,14 +40,14 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
         />
 
         <button className="kintun" onClick={submit}>
-          {status === 2 ? 'Membalas ...' : 'Bales'}
+          {status === 2 ? 'Membalas ...' : 'Balas'}
         </button>
       </form>
 
       {status === 3 && (
         <div className="pangetan sukses wangsulan">
           <p>
-            Balesannya udah dikirim, tapi tetep harus nunggu aku ngecek dulu ya ✨
+           Oke, Berhasil Terkirim, Reload Website Kamu ✨
           </p>
         </div>
       )}
