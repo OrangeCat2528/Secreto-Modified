@@ -26,7 +26,7 @@ const send = async (message: string, parent?: number) => {
   const { data, error } = await supabase.from('messages').insert([
     {
       message: message,
-      active: false,
+      active: true,
       parent: parent || null
     }
   ])
