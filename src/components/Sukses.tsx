@@ -22,8 +22,8 @@ const Sukses: FC = () => (
     <h2>Sukses Terkirim!</h2>
 
     <p>
-      Makasih ya Yang udah Ngirimin Pesen, Nanti aku cek ya🤗
-      nanti bakal ditampilin sekalian dibales kok~
+      Terima Kasih ya Yang udah Mau Kirim Pesan 🙏
+      Silahkan Reload Website Untuk melihat Pesan Kamu
     </p>
   </div>
 )
