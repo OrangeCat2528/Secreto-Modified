@@ -50,7 +50,7 @@ const Gineman: FC = () => {
             <small>
               <span className="wigatos">*</span>
               <span>
-                aku gabakal tau siapa yang ngirim pesan disini<br>P Wibu
+                aku gabakal tau siapa yang ngirim pesan disini
               </span>
             </small>
 
