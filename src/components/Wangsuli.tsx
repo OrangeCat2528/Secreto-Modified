@@ -52,11 +52,6 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
         </div>
       )}
     </>
-    <Center my="4">
- <Text textAlign="center" fontSize="xs">
-  Made with ❤️ by Farrel.
-  </Text>
-   </Center>
   )
 }
 
