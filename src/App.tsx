@@ -9,4 +9,10 @@ const App: FC = () => (
   </>
 )
 
+<Center my="4">
+ <Text textAlign="center" fontSize="xs">
+  Made with ❤️ by Farrel.
+  </Text>
+   </Center>
+
 export default App
