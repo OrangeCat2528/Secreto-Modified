@@ -45,7 +45,7 @@ const Pangangge: FC = () => {
               childrens={item.childrens}
             />
           ))
-        : 'Memuat ...'}
+        : ''}
     </div>
   )
 }
