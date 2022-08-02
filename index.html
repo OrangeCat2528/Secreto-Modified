@@ -28,12 +28,10 @@
   <body>
     <script type="text/javascript">
       function codeAddress() {
-              let timerInterval
+   let timerInterval
 Swal.fire({
-  title: 'Auto close alert!',
-  html: 'I will close in <b></b> milliseconds.',
-  timer: 2000,
-  timerProgressBar: true,
+  title: 'Processing...',
+  timer: 1500,
   didOpen: () => {
     Swal.showLoading()
     const b = Swal.getHtmlContainer().querySelector('b')
