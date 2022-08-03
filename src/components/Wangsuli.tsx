@@ -39,14 +39,6 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
           disabled={status === 2}
         />
         
-          function {submit}() {
-            Swal.fire(
-              'Terikirim!',
-              'Silahkan Reload Website Untuk melihat pesan Anda.',
-              'success'
-             )
-            }
-        
         <button className="kintun" onClick={submit}>
           {status === 2 ? 'Membalas ...' : 'Balas'}
         </button>
