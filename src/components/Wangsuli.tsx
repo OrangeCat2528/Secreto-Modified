@@ -39,8 +39,6 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
           disabled={status === 2}
         />
         
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script type="text/javascript">
           function {submit}() {
             Swal.fire(
               'Terikirim!',
@@ -48,7 +46,6 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
               'success'
              )
             }
-        </script>
         
         <button className="kintun" onClick={submit}>
           {status === 2 ? 'Membalas ...' : 'Balas'}
