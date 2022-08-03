@@ -38,7 +38,18 @@ const Wangsuli: FC<{ parent: number }> = ({ parent }) => {
           placeholder="Mau Dibalas?"
           disabled={status === 2}
         />
-
+        
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type="text/javascript">
+          function {submit}() {
+            Swal.fire(
+              'Terikirim!',
+              'Silahkan Reload Website Untuk melihat pesan Anda.',
+              'success'
+             )
+            }
+        </script>
+        
         <button className="kintun" onClick={submit}>
           {status === 2 ? 'Membalas ...' : 'Balas'}
         </button>
