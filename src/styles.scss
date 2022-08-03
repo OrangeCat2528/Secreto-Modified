@@ -27,6 +27,11 @@ body {
   display: block;
 }
 
+body.swal2-shown > [aria-hidden="true"] {
+  transition: 0.1s filter;
+  filter: blur(10px);
+}
+
 .pangetan {
   color: rgba(255, 255, 255, 0.92);
   padding: 20px;
