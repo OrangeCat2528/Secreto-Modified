@@ -53,17 +53,20 @@ Swal.fire({
         </script>
     
     <script>
-  if (
-    event.keyCode === 123 ||
-    ctrlShiftKey(e, 'I') ||
-    ctrlShiftKey(e, 'J') ||
-    ctrlShiftKey(e, 'C') ||
-    (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0)))
+document.onkeydown = function(e) {
+        if (e.ctrlKey && 
+            (e.keyCode === 67 || 
+             e.keyCode === 86 || 
+             e.keyCode === 85 || 
+             e.keyCode === 117)) {
      swal.fire({
        icon: 'error',
        title: 'Oops...',
        text: 'Action is Disabled',
-    return false;
+            return false;
+        } else {
+            return true;
+        }
 };
     </script>
     
