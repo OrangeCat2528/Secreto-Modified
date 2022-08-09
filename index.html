@@ -53,13 +53,13 @@ Swal.fire({
         </script>
     
     <script>
-document.onkeydown = function(e) {
+       document.onkeydown = function(e) {
         if (e.ctrlKey && 
             (e.keyCode === 67 || 
              e.keyCode === 86 || 
              e.keyCode === 85 || 
              e.keyCode === 117)) {
-     swal.fire({
+       swal.fire({
        icon: 'error',
        title: 'Oops...',
        text: 'Action is Disabled',
