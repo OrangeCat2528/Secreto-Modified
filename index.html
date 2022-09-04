@@ -5,9 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="Saturn.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kirim Pesan Rahasia ke Farrel</title>
-    
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+   
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="dns-prefetch" href="https://fontbit.io" />
     <link rel="preconnect" crossorigin="anonymous" href="https://fontbit.io" />
     <link
@@ -27,7 +26,6 @@
   </head>
 
   <body>
-    <!--
     <script type="text/javascript">
       function codeAddress() {
    let timerInterval
@@ -44,48 +42,31 @@ Swal.fire({
   willClose: () => {
     clearInterval(timerInterval)
   }
-}).then((result) => {
-  /* Read more about handling dismissals below */
-  if (result.dismiss === Swal.DismissReason.timer) {
-    console.log('[CONSOLE] Loading Supabase Data...')
-    console.log('[CONSOLE] Processing Done!')
-  }
 })
         }
       window.onload = codeAddress;
         </script>
-  -->
-    
-   <script type="text/javascript">
-      function codeAddress() {
-     Swal.fire({
-      icon: 'warning',
-      title: 'Sedang Dalam Pemeliharaan',
-      showConfirmButton: false,
-      allowOutsideClick: false,
-      allowEscapeKey: false
-    })
-  window.onload = codeAddress;
-    </script>
-    
-    <script>
-      document.onkeydown = function(e) {
-        if (e.ctrlKey && 
-            (e.keyCode === 67 || 
-             e.keyCode === 86 || 
-             e.keyCode === 85 || 
-             e.keyCode === 117)) {
-            Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Action is Disabled',
-            })
-            return false;
-        } else {
-            return true;
-        }
-};
-    </script>
+
+<script>
+        document.onkeydown = function(e) {
+          if (e.ctrlKey && 
+              (e.keyCode === 67 || 
+               e.keyCode === 86 || 
+               e.keyCode === 85 || 
+               e.keyCode === 117)) {
+              Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Action is Disabled',
+            showConfirmButton: false,
+            timer: 600                
+              })
+              return false;
+          } else {
+              return true;
+          }
+  };
+      </script>
     
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
