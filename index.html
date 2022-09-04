@@ -26,6 +26,7 @@
   </head>
 
   <body>
+    <!--
     <script type="text/javascript">
       function codeAddress() {
    let timerInterval
@@ -52,6 +53,19 @@ Swal.fire({
         }
       window.onload = codeAddress;
         </script>
+  -->
+    
+   <script type="text/javascript">
+      function codeAddress() {
+     Swal.fire({
+      title: 'Sedang Dalam Pemeliharaan',
+      icon: 'warning',
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false
+    })
+  window.onload = codeAddress;
+    </script>
     
     <script>
       document.onkeydown = function(e) {
