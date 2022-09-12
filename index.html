@@ -30,8 +30,8 @@
       function codeAddress() {
    let timerInterval
 Swal.fire({
-  title: 'Processing...',
-  timer: 1500,
+  title: 'Mode Pemeliharaan',
+  timer: 1500000000, 
   didOpen: () => {
     Swal.showLoading()
     const b = Swal.getHtmlContainer().querySelector('b')
@@ -47,6 +47,7 @@ Swal.fire({
       window.onload = codeAddress;
         </script>
 
+    <!--1500-->
 <script>
         document.onkeydown = function(e) {
           if (e.ctrlKey && 
