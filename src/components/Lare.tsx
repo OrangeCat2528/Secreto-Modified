@@ -10,7 +10,7 @@ const Lare: FC<{ childrens?: any[] }> = ({ childrens }) => {
     <ul className="lare">
       {childrens ? (
         childrens.reverse().map(child => (
-          <li key={child.id} className={child.owner ? 'gadhah' : ''}>
+          <li key={child.id} className={child.owner ? 'gadhah' : 'Farrel'}>
             {child.message}
 
             <small>{date(child.created)}</small>
