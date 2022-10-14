@@ -50,7 +50,7 @@ const Gineman: FC = () => {
             <small>
               <span className="wigatos">*</span>
               <span>
-                Telegram: @farrelprmn | Chat me for Random Purposes. 
+                "Namun aku akan tetap Disini menunggu alam semesta menerima, dan Angin membawakan Jawabannya.." (43.637578, -79.421336)
               </span>
             </small>
 
