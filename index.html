@@ -48,26 +48,70 @@ Swal.fire({
         </script>
 
     <!--1500-->
+    
+<!--AWAL COBA PROTECT INSPECT-->
 <script>
-        document.onkeydown = function(e) {
-          if (e.ctrlKey && 
-              (e.keyCode === 67 || 
-               e.keyCode === 86 || 
-               e.keyCode === 85 || 
-               e.keyCode === 117)) {
-              Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Action is Disabled',
-            showConfirmButton: false,
-            timer: 600                
-              })
-              return false;
-          } else {
-              return true;
-          }
-  };
-      </script>
+    document.onkeydown = function(e) {
+    if(event.keyCode == 123) {
+    return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+    return false;
+    }
+    }
+    </script>
+    
+    <script type="text/javascript">
+        //Script for disabling right click on mouse
+        var message="FUNCTION DISABLED!";
+        function clickdsb(){
+        if (event.button==2){
+        alert(message);
+        return false;
+        }
+        }
+        function clickbsb(e){
+        if (document.layers||document.getElementById&&!document.all){
+        if (e.which==2||e.which==3){
+        alert(message);
+        return false;
+        }
+        }
+        }
+        if (document.layers){
+        document.captureEvents(Event.MOUSEDOWN);
+        document.onmousedown=clickbsb;
+        }
+        else if (document.all&&!document.getElementById){
+        document.onmousedown=clickdsb;
+        }
+        document.oncontextmenu=new Function("alert(message);return false")
+        </script>
+<!--AKHIR COBA PROTECT INSPECT-->
     
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
