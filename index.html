@@ -30,7 +30,7 @@
     <script type="text/javascript">
       function codeAddress() {
         Swal.fire({
-  title: 'Apakah kamu Orang??',
+  title: 'Apakah kamu Orang?',
   html: '<div id="recaptcha"></div>',
   allowOutsideClick: false,
   didOpen: () => {
@@ -40,7 +40,7 @@
   },
   preConfirm: function () {
     if (grecaptcha.getResponse().length === 0) {
-      Swal.showValidationMessage(`Kamu manusia? Checklist dulu!`)
+      Swal.showValidationMessage(`Kamu orang kan? Checklist dulu!`)
     }
   }
 })
