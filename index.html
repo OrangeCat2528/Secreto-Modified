@@ -7,6 +7,7 @@
     <title>Kirim Pesan Rahasia ke Farrel</title>
    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <link rel="dns-prefetch" href="https://fontbit.io" />
     <link rel="preconnect" crossorigin="anonymous" href="https://fontbit.io" />
     <link
@@ -28,19 +29,18 @@
   <body>
     <script type="text/javascript">
       function codeAddress() {
-   let timerInterval
-Swal.fire({
-  title: 'Processing..',
-  timer: 1500, 
+        Swal.fire({
+  title: 'Apakah kamu Orang??',
+  html: '<div id="recaptcha"></div>',
   didOpen: () => {
-    Swal.showLoading()
-    const b = Swal.getHtmlContainer().querySelector('b')
-    timerInterval = setInterval(() => {
-      b.textContent = Swal.getTimerLeft()
-    }, 100)
+    grecaptcha.render('recaptcha', {
+      'sitekey': '6LccQOIjAAAAAF0u0ffQlH5kObSoJyBb01P6aE-9'
+    })
   },
-  willClose: () => {
-    clearInterval(timerInterval)
+  preConfirm: function () {
+    if (grecaptcha.getResponse().length === 0) {
+      Swal.showValidationMessage(`Kamu manusia? Checklist dulu!`)
+    }
   }
 })
         }
@@ -87,7 +87,7 @@ Swal.fire({
     
     <script type="text/javascript">
         //Script for disabling right click on mouse
-        var message="FUNCTION DISABLED!";
+        var message="Dimatikan Untuk Keamanan!";
         function clickdsb(){
         if (event.button==2){
         alert(message);
@@ -112,6 +112,12 @@ Swal.fire({
         document.oncontextmenu=new Function("alert(message);return false")
         </script>
 <!--AKHIR COBA PROTECT INSPECT-->
+    
+    <style>
+      #recaptcha > div {
+  margin: 0 auto .5em;
+}
+    </style>
     
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
