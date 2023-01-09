@@ -32,6 +32,7 @@
         Swal.fire({
   title: 'Apakah kamu Orang??',
   html: '<div id="recaptcha"></div>',
+  allowOutsideClick: false,
   didOpen: () => {
     grecaptcha.render('recaptcha', {
       'sitekey': '6LccQOIjAAAAAF0u0ffQlH5kObSoJyBb01P6aE-9'
