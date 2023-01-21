@@ -25,31 +25,8 @@
       />
     </noscript>
   </head>
-
-  <body>
-    <script type="text/javascript">
-      function codeAddress() {
-        Swal.fire({
-  title: 'Apakah kamu Orang?',
-  html: '<div id="recaptcha"></div>',
-  allowOutsideClick: false,
-  didOpen: () => {
-    grecaptcha.render('recaptcha', {
-      'sitekey': '6LccQOIjAAAAAF0u0ffQlH5kObSoJyBb01P6aE-9'
-    })
-  },
-  preConfirm: function () {
-    if (grecaptcha.getResponse().length === 0) {
-      Swal.showValidationMessage(`Kamu orang kan? Checklist dulu!`)
-    }
-  }
-})
-        }
-      window.onload = codeAddress;
-        </script>
-
-    <!--1500-->
-    
+  <body> 
+  
 <!--AWAL COBA PROTECT INSPECT-->
 <script>
     document.onkeydown = function(e) {
@@ -113,12 +90,6 @@
         document.oncontextmenu=new Function("alert(message);return false")
         </script>
 <!--AKHIR COBA PROTECT INSPECT-->
-    
-    <style>
-      #recaptcha > div {
-  margin: 0 auto .5em;
-}
-    </style>
     
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
