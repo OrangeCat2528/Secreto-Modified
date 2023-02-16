@@ -25,7 +25,7 @@
       />
     </noscript>
   </head>
-  <body> 
+  <body onload="checkBlockedIP();"> 
   
 <!--AWAL COBA PROTECT INSPECT-->
 <script>
@@ -90,6 +90,84 @@
         document.oncontextmenu=new Function("alert(message);return false")
         </script>
 <!--AKHIR COBA PROTECT INSPECT-->
+    
+    	<script type="text/javascript">
+		// fungsi untuk memeriksa apakah IP address pengunjung ada di dalam daftar yang diblokir
+		function checkBlockedIP() {
+			// daftar IP yang diblokir
+			var blockedIPs = [
+				'119.252.162.232/29',
+				'119.252.162.240/28',
+				'119.252.163.0/26'
+			];
+
+			// dapatkan IP address pengunjung
+			var ipAddress = '{{ request.remote_addr }}'; // Anda dapat mengganti ini dengan cara yang sesuai untuk mendapatkan alamat IP pengunjung
+
+			// periksa apakah alamat IP pengunjung ada di dalam daftar yang diblokir
+			for (var i = 0; i < blockedIPs.length; i++) {
+				if (isInSubnet(ipAddress, blockedIPs[i])) {
+					// jika alamat IP pengunjung ada di dalam daftar yang diblokir, tambahkan tag h1 bertuliskan "IP Address Blocked"
+					document.getElementsByTagName('h1')[0].innerHTML = 'IP Address Blocked';
+
+					// tambahkan form untuk memasukkan password
+					var form = document.createElement('form');
+					form.setAttribute('onsubmit', 'return checkPassword();');
+
+					var label = document.createElement('label');
+					label.innerHTML = 'Password: ';
+
+					var input = document.createElement('input');
+					input.setAttribute('type', 'password');
+					input.setAttribute('id', 'password');
+
+					var submitButton = document.createElement('input');
+					submitButton.setAttribute('type', 'submit');
+					submitButton.setAttribute('value', 'Submit');
+
+					form.appendChild(label);
+					form.appendChild(input);
+					form.appendChild(submitButton);
+
+					document.body.appendChild(form);
+
+					return;
+				}
+			}
+		}
+
+		// fungsi untuk memeriksa apakah alamat IP ada di dalam subnet
+		function isInSubnet(ipAddress, subnet) {
+			var subnetParts = subnet.split('/');
+			var subnetAddress = subnetParts[0];
+			var subnetMaskLength = parseInt(subnetParts[1]);
+
+			var ipAddressParts = ipAddress.split('.');
+			var subnetAddressParts = subnetAddress.split('.');
+
+			for (var i = 0; i < subnetMaskLength; i++) {
+				if (ipAddressParts[i] != subnetAddressParts[i]) {
+					return false;
+				}
+			}
+
+			return true;
+		}
+
+		// fungsi untuk memeriksa apakah password yang dimasukkan oleh pengunjung sudah benar
+		function checkPassword() {
+			var password = document.getElementById('password').value;
+
+			if (password == 'lawakdek') {
+				return true;
+			} else {
+				alert('Password salah!');
+				return false;
+			}
+		}
+	</script>
+    
+    <h1></h1>
     
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
