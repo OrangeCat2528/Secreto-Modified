@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kirim Pesan Rahasia ke Farrel</title>
    
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="dns-prefetch" href="https://fontbit.io" />
     <link rel="preconnect" crossorigin="anonymous" href="https://fontbit.io" />
     <link
@@ -25,149 +24,55 @@
       />
     </noscript>
   </head>
-  <body onload="checkBlockedIP();"> 
+  <body onload="showWarning()"> 
   
-<!--AWAL COBA PROTECT INSPECT-->
-<script>
-    document.onkeydown = function(e) {
-    if(event.keyCode == 123) {
-    return false;
-    }
-    if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
-    return false;
-    }
-    }
+    <!-- AWAL COBA PROTECT INSPECT -->
+    <script>
+      document.onkeydown = function(e) {
+        if(event.keyCode == 123) {
+          return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+          return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+          return false;
+        }
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+          return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+          return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
+          return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)){
+          return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)){
+          return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)){
+          return false;
+        }
+        if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+          return false;
+        }
+      }
+    
+      function showWarning() {
+        Swal.fire({
+          title: 'Warning',
+          text: 'Mohon Diperhatikan Lagi Kata-Katanya Sebelum mengisi, Jangan Menjadi Sampah di Base orang.',
+          footer: 'Ups, Mainnya Sindir mulu bang',
+          icon: 'warning',
+          showCancelButton: false,
+          confirmButtonText: 'Baik, Saya Mengerti'
+        })
+      }
     </script>
-    
-    <script type="text/javascript">
-        //Script for disabling right click on mouse
-        var message="Dimatikan Untuk Keamanan!";
-        function clickdsb(){
-        if (event.button==2){
-        alert(message);
-        return false;
-        }
-        }
-        function clickbsb(e){
-        if (document.layers||document.getElementById&&!document.all){
-        if (e.which==2||e.which==3){
-        alert(message);
-        return false;
-        }
-        }
-        }
-        if (document.layers){
-        document.captureEvents(Event.MOUSEDOWN);
-        document.onmousedown=clickbsb;
-        }
-        else if (document.all&&!document.getElementById){
-        document.onmousedown=clickdsb;
-        }
-        document.oncontextmenu=new Function("alert(message);return false")
-        </script>
-<!--AKHIR COBA PROTECT INSPECT-->
-    
-    	<script type="text/javascript">
-		// fungsi untuk memeriksa apakah IP address pengunjung ada di dalam daftar yang diblokir
-		function checkBlockedIP() {
-			// daftar IP yang diblokir
-			var blockedIPs = [
-				'119.252.162.232/29',
-				'119.252.162.240/28',
-				'119.252.163.0/26'
-			];
-
-			// dapatkan IP address pengunjung
-			var ipAddress = '{{ request.remote_addr }}'; // Anda dapat mengganti ini dengan cara yang sesuai untuk mendapatkan alamat IP pengunjung
-
-			// periksa apakah alamat IP pengunjung ada di dalam daftar yang diblokir
-			for (var i = 0; i < blockedIPs.length; i++) {
-				if (isInSubnet(ipAddress, blockedIPs[i])) {
-					// jika alamat IP pengunjung ada di dalam daftar yang diblokir, tambahkan tag h1 bertuliskan "IP Address Blocked"
-					document.getElementsByTagName('h1')[0].innerHTML = 'IP Address Blocked';
-
-					// tambahkan form untuk memasukkan password
-					var form = document.createElement('form');
-					form.setAttribute('onsubmit', 'return checkPassword();');
-
-					var label = document.createElement('label');
-					label.innerHTML = 'Password: ';
-
-					var input = document.createElement('input');
-					input.setAttribute('type', 'password');
-					input.setAttribute('id', 'password');
-
-					var submitButton = document.createElement('input');
-					submitButton.setAttribute('type', 'submit');
-					submitButton.setAttribute('value', 'Submit');
-
-					form.appendChild(label);
-					form.appendChild(input);
-					form.appendChild(submitButton);
-
-					document.body.appendChild(form);
-
-					return;
-				}
-			}
-		}
-
-		// fungsi untuk memeriksa apakah alamat IP ada di dalam subnet
-		function isInSubnet(ipAddress, subnet) {
-			var subnetParts = subnet.split('/');
-			var subnetAddress = subnetParts[0];
-			var subnetMaskLength = parseInt(subnetParts[1]);
-
-			var ipAddressParts = ipAddress.split('.');
-			var subnetAddressParts = subnetAddress.split('.');
-
-			for (var i = 0; i < subnetMaskLength; i++) {
-				if (ipAddressParts[i] != subnetAddressParts[i]) {
-					return false;
-				}
-			}
-
-			return true;
-		}
-
-		// fungsi untuk memeriksa apakah password yang dimasukkan oleh pengunjung sudah benar
-		function checkPassword() {
-			var password = document.getElementById('password').value;
-
-			if (password == 'lawakdek') {
-				return true;
-			} else {
-				alert('Password salah!');
-				return false;
-			}
-		}
-	</script>
-    
-    <h1></h1>
+    <!-- AKHIR COBA PROTECT INSPECT -->
     
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
