@@ -69,16 +69,15 @@
     </div>
     <div id="app"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      window.addEventListener("load", function () {
-        const preloader = document.getElementById("preloader");
-        const app = document.getElementById("app");
+<script>
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+  const app = document.getElementById("app");
 
-        setTimeout(function () {
-          preloader.classList.add("fadeOut");
-          app.style.display = "block";
-        }, 5000);
-      });
-    </script>
+  preloader.addEventListener("animationend", function () {
+    app.style.pointerEvents = "all";
+  });
+});
+</script>
   </body>
 </html>
