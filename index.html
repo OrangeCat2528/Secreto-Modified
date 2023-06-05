@@ -37,7 +37,7 @@
       background-color: #151515;
       opacity: 1;
       transition: opacity 1s ease-in-out;
-      z-index: 9998;
+      z-index: 9999;
     }
 
     #preloader.fadeOut {
@@ -59,9 +59,8 @@
     }
 
     #app {
-      display: none;
       position: relative;
-      z-index: 9999;
+      z-index: 9998;
     }
   </style>
   </head>
@@ -79,6 +78,7 @@
       setTimeout(function () {
         preloader.classList.add("fadeOut");
         app.style.display = "block";
+        app.style.zIndex = "9999"; // Move the app div on top of the preloader
       }, 5000);
     });
   </script>
