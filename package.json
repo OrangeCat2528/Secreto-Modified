@@ -34,7 +34,7 @@
     "pretty-quick": "^3.1.2",
     "sass": "^1.53.0",
     "typescript": "^4.4.4",
-    "vite": "^2.7.2",
+    "vite": "^2.9.16",
     "vite-plugin-pwa": "^0.12.0"
   },
   "prettier": {
