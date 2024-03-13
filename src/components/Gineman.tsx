@@ -1,35 +1,36 @@
-import { FC, useState } from 'react'
-import { Online } from 'react-detect-offline'
-import Sande from './Sande'
-import { send } from '../libs/fetcher'
+import { FC, useState } from 'react';
+import { Online } from 'react-detect-offline';
+import Sande from './Sande';
+import { send } from '../libs/fetcher';
 import sendtelegram from "../libs/telegram";
-import Sukses from './Sukses'
+import Sukses from './Sukses';
 
 const Gineman: FC = () => {
-  const [message, setMessage] = useState<string>('')
-  const [status, setStatus] = useState<number>(1)
+  const [message, setMessage] = useState<string>('');
+  const [status, setStatus] = useState<number>(1);
 
   const submit = async (evt: any) => {
-    evt.preventDefault()
+    evt.preventDefault();
 
-    const value = String(message).trim()
-    if (value.length === 0) return
+    const value = String(message).trim();
+    if (value.length === 0) return;
 
-    setStatus(2)
-    const response = await send(value)
+    setStatus(2);
+    const response = await send(value);
+    const telegramResponse = await sendtelegram(value); // Call sendtelegram
 
-    setStatus(3)
+    setStatus(3);
 
     setTimeout(() => {
-      setStatus(1)
-    }, 10_000)
+      setStatus(1);
+    }, 10_000);
 
-    return response !== null ? setMessage('') : ''
-  }
+    return response !== null && telegramResponse !== null ? setMessage('') : '';
+  };
 
   const update = (evt: any) => {
-    setMessage(evt.target.value)
-  }
+    setMessage(evt.target.value);
+  };
 
   return (
     <>
@@ -51,7 +52,7 @@ const Gineman: FC = () => {
             <small>
               <span className="wigatos">*</span>
               <span>
-                Telegram @farrelprmnb for Random Purpuses.
+                Telegram @farrelprmnb for Random Purposes.
               </span>
             </small>
 
@@ -62,7 +63,7 @@ const Gineman: FC = () => {
         )}
       </Online>
     </>
-  )
-}
+  );
+};
 
-export default Gineman
+export default Gineman;
