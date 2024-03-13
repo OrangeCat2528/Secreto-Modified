@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from 'react'
 import Pesen from './Pesen'
-import results from '../libs/fetcher'
+import { results, send } from '../libs/fetcher';
 
 const Pangangge: FC = () => {
   const [messages, setMessages] = useState<any[]>()
