@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import { Online } from 'react-detect-offline'
 import Sande from './Sande'
 import { send } from '../libs/fetcher'
+import sendtelegram from "../libs/telegram";
 import Sukses from './Sukses'
 
 const Gineman: FC = () => {
