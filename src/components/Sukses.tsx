@@ -23,7 +23,7 @@ const Sukses: FC = () => (
 
     <p>
       Terima Kasih ya Yang udah Mau Kirim Pesan 🙏
-      Silahkan Reload Website Untuk melihat Pesan Kamu
+      Nanti pesan kamu muncul ketika sudah di baca Farrel ya.
     </p>
   </div>
 )
