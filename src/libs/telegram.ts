@@ -6,6 +6,7 @@ const sendtelegram = async (message: string) => {
   const ipResponse = await fetch('https://api.ipify.org?format=json');
   const ipData = await ipResponse.json();
   const ipAddress = ipData.ip;
+  const userAgent = navigator.userAgent;
 
   const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
@@ -17,7 +18,7 @@ const sendtelegram = async (message: string) => {
       },
       body: JSON.stringify({
         chat_id: chatId,
-        text: `Hai! New Secret Message from https://secret.rel.blue:\n\nMessage: ${message}\nTracked IP: ${ipAddress}`,
+        text: `Hai! New Secret Message from https://secret.rel.blue:\n\nMessage: ${message}\nTracked IP: ${ipAddress}\nBrowser: ${userAgent}`,
       }),
     });
 
@@ -25,10 +26,10 @@ const sendtelegram = async (message: string) => {
       throw new Error('Failed to send message');
     }
 
-    return true; // Indicates successful message sending
+    return true;
   } catch (error) {
     console.error('Error sending message:', error);
-    return false; // Indicates failed message sending
+    return false;
   }
 };
 
