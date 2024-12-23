@@ -21,12 +21,12 @@ const results = async () => {
 
   return !error ? data : null
 }
-
+// ubah ke true agar semua message langsung tampil di ui
 const send = async (message: string, parent?: number) => {
   const { data, error } = await supabase.from('messages').insert([
     {
       message: message,
-      active: false,
+      active: true,
       parent: parent || null
     }
   ])
